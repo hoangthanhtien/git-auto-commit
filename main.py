@@ -54,7 +54,7 @@ enable_push_master = yes_or_no("Enable push to master or main branch?")
 
 # Setup conjob for auto commit
 cron = CronTab(user=True)
-job = cron.new(command=f'./auto_git_commit.sh {git_folder_path} {"--push-master" if enable_push_master else ""}')
+job = cron.new(command=f'~/git-auto-commit/auto_git_commit.sh {git_folder_path} {"--push-master" if enable_push_master else ""}')
 job.setall(int(minute), int(hour))
 cron.write()
 print(f"{git_folder_path} will be auto commit everyday at {commit_time}")
