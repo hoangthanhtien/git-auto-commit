@@ -22,6 +22,7 @@ $ git-auto-commit
 ```
 <img src="./example.png">
 3. (Optional) Check the crontab
+
 ```bash
 crontab -e
 ```
