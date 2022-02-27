@@ -1,3 +1,4 @@
+import subprocess
 from subprocess import call, STDOUT
 import os
 from os import path
@@ -9,6 +10,7 @@ git_folder_path = input()
 # Validate path
 if not path.exists(git_folder_path):
     raise Exception(f"{git_folder_path} is not exists, please check")
+
 # Check if input path is a git folder by checking if a .git folder exists
 if not path.exists(git_folder_path+"/.git"):
     raise Exception(f"{git_folder_path} is not a git repository")
@@ -34,4 +36,5 @@ try:
 except Exception:
     raise Exception("You must enter the valid commit time")
 print("hour, minute", hour, minute)
+print("###########################################")
 print(f"{git_folder_path} will be auto commit everyday at {commit_time}")
